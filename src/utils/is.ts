@@ -101,5 +101,7 @@ export const isUrl = (path: string): boolean => {
 }
 
 export const isDark = (): boolean => {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches
+  // 禁用黑暗模式
+  // return window.matchMedia('(prefers-color-scheme: dark)').matches
+  return false
 }

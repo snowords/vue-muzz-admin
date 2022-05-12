@@ -32,10 +32,6 @@ account: **admin/admin test/test**
 
 `test` account is used to simulate the front-end control authority. The server only returns the menu key to be displayed, and the front-end performs matching rendering
 
-## Documentation
-
-[Document Github](https://element-plus-admin-doc.cn/)
-
 ## Preparation
 
 - [node](http://nodejs.org/) and [git](https://git-scm.com/) - Project development environment
