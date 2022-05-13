@@ -72,10 +72,6 @@ pnpm run dev
 pnpm run build:pro
 ```
 
-## 更新日志
-
-[更新日志](./CHANGELOG.md)
-
 ## 如何贡献
 
 你可以[提一个 issue](https://github.com/snowords/vue-muzz-admin/issues/new) 或者提交一个 Pull Request。

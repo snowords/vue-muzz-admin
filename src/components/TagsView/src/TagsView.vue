@@ -343,7 +343,7 @@ watch(
             <router-link :ref="tagLinksRefs.set" :to="{ ...item }" custom v-slot="{ navigate }">
               <div
                 @click="navigate"
-                class="h-full flex transition-all justify-center items-center whitespace-nowrap pl-15px pr-15px hover:pr-25px"
+                class="h-full flex transition-all duration-300 justify-center items-center whitespace-nowrap pl-15px pr-15px hover:pr-25px"
               >
                 <Icon
                   v-if="

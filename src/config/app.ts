@@ -81,9 +81,9 @@ export const appModules: AppState = {
     // 左侧菜单浅色背景颜色
     leftMenuBgLightColor: '#fff',
     // 左侧菜单选中背景颜色
-    leftMenuBgActiveColor: 'var(--el-color-primary)',
+    leftMenuBgActiveColor: 'RGBA(64,158,255,0.1)',
     // 左侧菜单收起选中背景颜色
-    leftMenuCollapseBgActiveColor: 'var(--el-color-primary)',
+    leftMenuCollapseBgActiveColor: 'RGBA(64,158,255,0.1)',
     // 左侧菜单字体颜色
     leftMenuTextColor: '#333',
     // 左侧菜单选中字体颜色

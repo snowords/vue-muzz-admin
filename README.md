@@ -72,10 +72,6 @@ pnpm run dev
 pnpm run build:pro
 ```
 
-## Change Log
-
-[CHANGELOG](./CHANGELOG.md)
-
 ## How to contribute
 
 You can [Raise an issue](https://github.com/snowords/vue-muzz-admin/issues/new) Or submit a Pull Request.
