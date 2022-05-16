@@ -24,7 +24,6 @@ declare global {
   const ElSelectV2: typeof import('element-plus/es')['ElSelectV2']
   const ElSlider: typeof import('element-plus/es')['ElSlider']
   const ElSwitch: typeof import('element-plus/es')['ElSwitch']
-  const ElTag: typeof import('element-plus/es')['ElTag']
   const ElTimePicker: typeof import('element-plus/es')['ElTimePicker']
   const ElTimeSelect: typeof import('element-plus/es')['ElTimeSelect']
   const ElTransfer: typeof import('element-plus/es')['ElTransfer']
