@@ -101,6 +101,5 @@ export const isUrl = (path: string): boolean => {
 }
 
 export const isDark = (): boolean => {
-  // return window.matchMedia('(prefers-color-scheme: dark)').matches
-  return false
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
 }
