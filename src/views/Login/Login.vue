@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { LoginForm } from './components'
-// import { ThemeSwitch } from '@/components/ThemeSwitch'
+import { ThemeSwitch } from '@/components/ThemeSwitch'
 import { LocaleDropdown } from '@/components/LocaleDropdown'
 import { useI18n } from '@/hooks/web/useI18n'
 import { underlineToHump } from '@/utils'
@@ -23,7 +23,7 @@ const { t } = useI18n()
   >
     <div class="relative h-full flex mx-auto">
       <div
-        :class="`${prefixCls}__left flex-1 bg-gray-400 bg-opacity-30 relative p-30px <xl:hidden`"
+        :class="`${prefixCls}__left flex-1 bg-gray-500 bg-opacity-20 relative p-30px <xl:hidden`"
       >
         <div class="flex items-center relative text-white">
           <img src="@/assets/imgs/logo.png" alt="" class="w-48px h-48px mr-10px" />
@@ -51,13 +51,13 @@ const { t } = useI18n()
           </div>
 
           <div class="flex justify-end items-center space-x-10px">
-            <!-- <ThemeSwitch /> -->
+            <ThemeSwitch />
             <LocaleDropdown class="<xl:text-white dark:text-white" />
           </div>
         </div>
         <Transition appear enter-active-class="animate__animated animate__bounceInRight">
           <div
-            class="h-full flex items-center m-auto w-[100%] @2xl:max-w-400px @xl:max-w-400px @md:max-w-400px @lg:max-w-400px"
+            class="h-full flex items-center m-auto w-[100%] @2xl:max-w-500px @xl:max-w-500px @md:max-w-500px @lg:max-w-500px"
           >
             <LoginForm class="p-20px h-auto m-auto <xl:(rounded-3xl light:bg-white)" />
           </div>

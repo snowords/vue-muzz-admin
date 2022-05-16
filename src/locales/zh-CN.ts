@@ -194,7 +194,7 @@ export default {
     yield: '产量',
     dynamic: '动态',
     push: '推送',
-    pushCode: 'Muzzer 推送 代码到 Github',
+    pushCode: 'Muzzer 推送代码到 Github',
     follow: '关注'
   },
   formDemo: {

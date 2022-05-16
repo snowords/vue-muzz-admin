@@ -257,18 +257,24 @@ watch(
 </script>
 
 <template>
-  <div :id="prefixCls" :class="prefixCls" class="h-[var(--tags-view-height)] flex w-full relative">
+  <div
+    :id="prefixCls"
+    :class="prefixCls"
+    class="flex w-full relative bg-[#fff] dark:bg-[var(--el-bg-color)]"
+  >
     <span
       :class="`${prefixCls}__tool`"
       class="w-[var(--tags-view-height)] h-[var(--tags-view-height)] text-center leading-[var(--tags-view-height)] cursor-pointer"
       @click="move(-200)"
     >
-      <Icon icon="ep:d-arrow-left" color="#333" />
+      <Icon
+        icon="ep:d-arrow-left"
+        :color="appStore.getIsDark ? 'var(--el-text-color-regular)' : '#333'"
+      />
     </span>
     <div class="overflow-hidden flex-1">
       <ElScrollbar ref="scrollbarRef" class="h-full" @scroll="scroll">
         <div class="flex h-full">
-          <div></div>
           <ContextMenu
             :ref="itemRefs.set"
             :schema="[
@@ -343,7 +349,7 @@ watch(
             <router-link :ref="tagLinksRefs.set" :to="{ ...item }" custom v-slot="{ navigate }">
               <div
                 @click="navigate"
-                class="h-full flex transition-all duration-300 justify-center items-center whitespace-nowrap pl-15px pr-15px hover:pr-25px"
+                class="h-full flex justify-center items-center whitespace-nowrap pl-15px"
               >
                 <Icon
                   v-if="
@@ -375,14 +381,20 @@ watch(
       class="w-[var(--tags-view-height)] h-[var(--tags-view-height)] text-center leading-[var(--tags-view-height)] cursor-pointer"
       @click="move(200)"
     >
-      <Icon icon="ep:d-arrow-right" color="#333" />
+      <Icon
+        icon="ep:d-arrow-right"
+        :color="appStore.getIsDark ? 'var(--el-text-color-regular)' : '#333'"
+      />
     </span>
     <span
       :class="`${prefixCls}__tool`"
       class="w-[var(--tags-view-height)] h-[var(--tags-view-height)] text-center leading-[var(--tags-view-height)] cursor-pointer"
       @click="refreshSelectedTag(selectedTag)"
     >
-      <Icon icon="ant-design:reload-outlined" color="#333" />
+      <Icon
+        icon="ant-design:reload-outlined"
+        :color="appStore.getIsDark ? 'var(--el-text-color-regular)' : '#333'"
+      />
     </span>
     <ContextMenu
       trigger="click"
@@ -439,7 +451,10 @@ watch(
         :class="`${prefixCls}__tool`"
         class="w-[var(--tags-view-height)] h-[var(--tags-view-height)] text-center leading-[var(--tags-view-height)] cursor-pointer block"
       >
-        <Icon icon="ant-design:setting-outlined" color="#333" />
+        <Icon
+          icon="ant-design:setting-outlined"
+          :color="appStore.getIsDark ? 'var(--el-text-color-regular)' : '#333'"
+        />
       </span>
     </ContextMenu>
   </div>
@@ -449,7 +464,6 @@ watch(
 @prefix-cls: ~'@{namespace}-tags-view';
 
 .@{prefix-cls} {
-  background-color: #fff;
   :deep(.@{elNamespace}-scrollbar__view) {
     height: 100%;
   }
@@ -483,6 +497,7 @@ watch(
     position: relative;
     top: 2px;
     height: calc(~'100% - 4px');
+    padding-right: 25px;
     font-size: 12px;
     cursor: pointer;
     border: 1px solid #d9d9d9;
@@ -513,6 +528,49 @@ watch(
     .@{prefix-cls}__item--close {
       :deep(span) {
         color: var(--el-color-white) !important;
+      }
+    }
+  }
+}
+
+.dark {
+  .@{prefix-cls} {
+    &__tool {
+      &:hover {
+        :deep(span) {
+          color: #fff !important;
+        }
+      }
+
+      &:after {
+        border-right: 1px solid var(--el-border-color);
+        border-left: 1px solid var(--el-border-color);
+      }
+    }
+
+    &__item {
+      position: relative;
+      top: 2px;
+      height: calc(~'100% - 4px');
+      padding-right: 25px;
+      font-size: 12px;
+      cursor: pointer;
+      border: 1px solid var(--el-border-color);
+    }
+
+    &__item:not(.is-active) {
+      &:hover {
+        color: var(--el-color-primary);
+      }
+    }
+
+    &__item.is-active {
+      color: var(--el-color-white);
+      background-color: var(--el-color-primary);
+      .@{prefix-cls}__item--close {
+        :deep(span) {
+          color: var(--el-color-white) !important;
+        }
       }
     }
   }
